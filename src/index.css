@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "DM Sans", system-ui, sans-serif;
+    /* Soft light-mint/gray background matching the image */
+    background-color: #f0f4f4; 
+    color: #334155; /* slate-700 */
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9; /* slate-100 */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1; /* slate-300 */
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #37877A; /* brand accent */
+  }
+}
+
+@layer components {
+  .card {
+    /* White background, soft border, rounded corners matching the modal */
+    @apply bg-white border border-slate-200 rounded-2xl shadow-sm;
+  }
+
+  .card-hover {
+    @apply hover:border-brand-500/40 hover:shadow-md transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full bg-white border border-slate-300 rounded-lg px-4 py-2.5 text-slate-800 text-sm
+    placeholder-slate-400 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30
+    transition-colors duration-150 shadow-sm;
+  }
+
+  .label {
+    @apply block text-sm font-semibold text-slate-700 mb-1.5;
+  }
+
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-600 text-white font-semibold px-5 py-2.5 rounded-lg
+    transition-all duration-150 flex items-center gap-2 text-sm shadow-sm hover:shadow
+    active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300 text-slate-700 font-medium px-5 py-2.5 rounded-lg
+    transition-all duration-150 flex items-center gap-2 text-sm active:scale-95 shadow-sm;
+  }
+
+  .btn-outline {
+    @apply border border-slate-300 hover:border-brand-500 text-slate-600 hover:text-brand-600 hover:bg-brand-50
+    font-medium px-5 py-2.5 rounded-lg transition-all duration-150 flex items-center gap-2 text-sm active:scale-95 bg-transparent;
+  }
+
+  .btn-danger {
+    @apply bg-red-50 hover:bg-red-100 border border-red-200 hover:border-red-300
+    text-red-600 font-medium px-4 py-2 rounded-lg transition-all duration-150 flex items-center gap-2 text-sm;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold border;
+  }
+
+  .badge-success {
+    @apply badge bg-emerald-50 text-emerald-700 border-emerald-200;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-50 text-red-700 border-red-200;
+  }
+
+  .badge-warning {
+    @apply badge bg-amber-50 text-amber-700 border-amber-200;
+  }
+
+  .badge-info {
+    @apply badge bg-brand-50 text-brand-700 border-brand-200;
+  }
+
+  .badge-default {
+    @apply badge bg-slate-100 text-slate-700 border-slate-200;
+  }
+
+  .section-title {
+    @apply text-base font-display font-bold text-slate-900 tracking-tight;
+  }
+
+  /* Quill Light Theme Adjustments */
+
+  .ql-toolbar.ql-snow {
+    @apply bg-slate-50 border-slate-200 rounded-t-lg;
+    border-color: rgb(226 232 240) !important;
+  }
+
+  .ql-container.ql-snow {
+    @apply bg-white border-slate-200 rounded-b-lg text-slate-800;
+    border-color: rgb(226 232 240) !important;
+  }
+
+  .ql-toolbar .ql-stroke {
+    stroke: #64748b !important; /* slate-500 */
+  }
+
+  .ql-toolbar .ql-fill {
+    fill: #64748b !important;
+  }
+
+  .ql-toolbar button:hover .ql-stroke {
+    stroke: #37877A !important; /* brand accent */
+  }
+
+  .ql-toolbar button:hover .ql-fill {
+    fill: #37877A !important;
+  }
+
+  .ql-toolbar .ql-picker-label {
+    color: #64748b !important;
+  }
+
+  .ql-editor {
+    color: #1e293b; /* slate-800 */
+    min-height: 220px;
+  }
+
+  .ql-editor.ql-blank::before {
+    color: #94a3b8; /* slate-400 */
+    font-style: normal;
+  }
+}
+
+/* Toast Overrides */
+
+.hot-toast-bar {
+  font-family: "DM Sans", sans-serif !important;
+}
